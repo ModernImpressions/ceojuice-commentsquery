@@ -11,10 +11,10 @@ if ($posts === false) {
 ?>
   <div class="slide">
     <blockquote>
-    <span class="leftq quotes">&ldquo;</span>comment<span class="rightq quotes">&bdquo;</span>
+    <span class="leftq quotes">&ldquo;</span>Comment<span class="rightq quotes">&bdquo;</span>
     </blockquote>
-    <h2>John Doe</h2>
-    <h6>Developer Relations at Woof Studios</h6>
+    <h2>Name</h2>
+    <h6>Title</h6>
   </div>
 <?php } else {
     echo $posts;
