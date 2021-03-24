@@ -27,7 +27,7 @@ if ($readjson === false) {
     //Parse the comment
     foreach ($data as $answerId) {
         echo "<!--TESTIMONIAL ".$slideId."-->";
-        echo "<div class="."item ".$format->format($slideId)." testimonial-slide "."slide-".$format->format($slideId).">";
+        echo "<div class=item ".$format->format($slideId)." testimonial-slide".">";
         echo "<div class='shadow-effect'>";
         echo "<blockquote>";
         echo "<span class='leftq quotes'>&ldquo;</span>";
