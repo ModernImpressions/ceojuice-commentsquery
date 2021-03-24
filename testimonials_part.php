@@ -31,7 +31,7 @@ if ($readjson === false) {
         echo "<div class='testimonial-slide'>";
         echo "<blockquote class='customer-blockquote'>";
         echo "<span class='leftq quotes'>&ldquo;</span>";
-        echo "<p>".$answerId['comment']."</p>";
+        echo "<p id='comment-text'>".$answerId['comment']."</p>";
         echo "<span class='rightq quotes'>&bdquo;</span>";
         echo "</blockquote>";
         echo "<h2 class='customername testimonial-name'>".$answerId["contact"]."</h2>";
