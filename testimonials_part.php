@@ -29,7 +29,7 @@ if ($readjson === false) {
         echo "<div class='item'>";
         echo "<!--TESTIMONIAL ".$slideId."-->";
         echo "<div class='testimonial-slide'>";
-        echo "<blockquote>";
+        echo "<blockquote class='customer-blockquote'>";
         echo "<span class='leftq quotes'>&ldquo;</span>";
         echo "<p>".$answerId['comment']."</p>";
         echo "<span class='rightq quotes'>&bdquo;</span>";
