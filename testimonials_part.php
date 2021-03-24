@@ -28,8 +28,8 @@ if ($readjson === false) {
     foreach ($data as $answerId) {
         echo "<div class='item'>";
         echo "<!--TESTIMONIAL ".$slideId."-->";
-        echo "<div class='testimonial-slide'>";
         echo "<div class='shadow-effect'>";
+        echo "<div class='testimonial-slide'>";
         echo "<blockquote>";
         echo "<span class='leftq quotes'>&ldquo;</span>";
         echo $answerId['comment'];
