@@ -3,7 +3,8 @@ $ceoURL = "https://api.ceojuice.com/api/Processes/SurveyComments?CustomerNumber=
 $ceoCustNum = "097";
 $ceoAPIKey = "dc5919d9-d0fb-44e0-a6d2-d71e8f38e747";
 $ceoqty = "10";
-$slideId = 0;
+$slideId = 1;
+$format = new NumberFormatter("en", NumberFormatter::SPELLOUT);
 
 $readjson = @file_get_contents($ceoURL.$ceoCustNum.'&AuthKey='.$ceoAPIKey.'&qty='.$ceoqty, true);
 if ($readjson === false) {
@@ -25,7 +26,7 @@ if ($readjson === false) {
     $data = json_decode($readjson, true);
     //Parse the comment
     foreach ($data as $answerId) {
-        echo "<div class=testimonial-slide "."slide-".$slideId.">";
+        echo "<div class=".$format->format($slideId)." testimonial-slide "."slide-".$format->format($slideId).">";
         echo "<blockquote>";
         echo "<span class='leftq quotes'>&ldquo;</span>";
         echo $answerId['comment'];
