@@ -26,8 +26,9 @@ if ($readjson === false) {
     $data = json_decode($readjson, true);
     //Parse the comment
     foreach ($data as $answerId) {
+        echo "<div class='owl-item'>";
         echo "<!--TESTIMONIAL ".$slideId."-->";
-        echo "<div class=item ".$format->format($slideId)." testimonial-slide".">";
+        echo "<div class='item testimonial-slide'>";
         echo "<div class='shadow-effect'>";
         echo "<blockquote>";
         echo "<span class='leftq quotes'>&ldquo;</span>";
@@ -38,6 +39,7 @@ if ($readjson === false) {
         echo "</div>";
         echo "</div>";
         echo "<!--END OF TESTIMONIAL ".$slideId."-->";
+        echo "</div>";
         $slideId++;
     }
 }?>
