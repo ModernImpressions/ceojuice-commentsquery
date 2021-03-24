@@ -25,7 +25,7 @@ if ($readjson === false) {
     $data = json_decode($readjson, true);
     //Parse the comment
     foreach ($data as $answerId) {
-        echo "<div class="."slide-".$slideId.">";
+        echo "<div class=testimonial-slide "."slide-".$slideId.">";
         echo "<blockquote>";
         echo "<span class='leftq quotes'>&ldquo;</span>";
         echo $answerId['comment'];
