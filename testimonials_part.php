@@ -28,15 +28,13 @@ if ($readjson === false) {
     foreach ($data as $answerId) {
         echo "<div class='item'>";
         echo "<!--TESTIMONIAL ".$slideId."-->";
-        echo "<div class='shadow-effect'>";
         echo "<div class='testimonial-slide'>";
         echo "<blockquote>";
         echo "<span class='leftq quotes'>&ldquo;</span>";
-        echo $answerId['comment'];
+        echo "<p>".$answerId['comment']."</p>";
         echo "<span class='rightq quotes'>&bdquo;</span>";
         echo "</blockquote>";
         echo "<h2 class='customername testimonial-name'>".$answerId["contact"]."</h2>";
-        echo "</div>";
         echo "</div>";
         echo "<!--END OF TESTIMONIAL ".$slideId."-->";
         echo "</div>";
