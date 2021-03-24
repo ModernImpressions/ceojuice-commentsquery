@@ -26,14 +26,18 @@ if ($readjson === false) {
     $data = json_decode($readjson, true);
     //Parse the comment
     foreach ($data as $answerId) {
-        echo "<div class=".$format->format($slideId)." testimonial-slide "."slide-".$format->format($slideId).">";
+        echo "<!--TESTIMONIAL ".$slideId."-->";
+        echo "<div class="."item ".$format->format($slideId)." testimonial-slide "."slide-".$format->format($slideId).">";
+        echo "<div class='shadow-effect'>";
         echo "<blockquote>";
         echo "<span class='leftq quotes'>&ldquo;</span>";
         echo $answerId['comment'];
         echo "<span class='rightq quotes'>&bdquo;</span>";
         echo "</blockquote>";
-        echo "<h2 class='customername'>".$answerId["contact"]."</h2>";
+        echo "<h2 class='customername testimonial-name'>".$answerId["contact"]."</h2>";
         echo "</div>";
+        echo "</div>";
+        echo "<!--END OF TESTIMONIAL ".$slideId."-->";
         $slideId++;
     }
 }?>
