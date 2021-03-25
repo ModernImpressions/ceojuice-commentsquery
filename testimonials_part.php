@@ -17,8 +17,9 @@ if ($readjson === false) {
     Comment
     <span class="rightq quotes">&bdquo;</span>
     </blockquote>
-    <h2>Name</h2>
-    <h6>Title</h6>
+    <span>
+      <h2>Name</h2> - <h6>Title</h6> 
+    </span>
   </div>
 <?php } else {
     //Results are recieved from the CEOJuice API
@@ -26,6 +27,9 @@ if ($readjson === false) {
     $data = json_decode($readjson, true);
     //Parse the comment
     foreach ($data as $answerId) {
+        $companyId = $answerId["customer"];
+        
+        $companyName = $companyId;
         echo "<div class='item'>";
         echo "<!--TESTIMONIAL ".$slideId."-->";
         echo "<div class='testimonial-slide'>";
@@ -35,6 +39,7 @@ if ($readjson === false) {
         echo "<span class='rightq quotes'>&bdquo;</span>";
         echo "</blockquote>";
         echo "<h2 class='customername testimonial-name'>".$answerId["contact"]."</h2>";
+        echo "<h6 class ='companyname'> - ".$companyName."</h6>";
         echo "</div>";
         echo "<!--END OF TESTIMONIAL ".$slideId."-->";
         echo "</div>";
