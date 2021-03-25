@@ -41,7 +41,7 @@ if ($readjson === false) {
         echo "<p id='comment-text'>".$comment."</p>";
         echo "<span class='rightq quotes'>&bdquo;</span>";
         echo "</blockquote>";
-        echo "<span>";
+        echo "<span class='contact-citation'>";
         echo "<h2 class='customername testimonial-name'>".$contact."</h2>";
         echo "<h6 class='surveydate date'>".date_format($date, "m/d/Y")."</h6>";
         if ($companyName == null) {
