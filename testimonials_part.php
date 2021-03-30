@@ -10,7 +10,7 @@ $buildURL = $ceoURL.$ceoCustNum.'&AuthKey='.$ceoAPIKey.'&qty='.$ceoqty;
 $readjson = @file_get_contents($buildURL, true);
 if ($readjson === false) {
     //There is an error opening the file
-    
+?>    
 <?php } else {
     //Results are recieved from the CEOJuice API
     //Decode JSON
