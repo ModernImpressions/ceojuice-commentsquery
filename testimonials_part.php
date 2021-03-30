@@ -10,27 +10,7 @@ $buildURL = $ceoURL.$ceoCustNum.'&AuthKey='.$ceoAPIKey.'&qty='.$ceoqty;
 $readjson = @file_get_contents($buildURL, true);
 if ($readjson === false) {
     //There is an error opening the file
-    echo "failed to poll data";
-    echo "<br/>";
-    echo $ceoCustNum;
-    echo "<br/>";
-    echo $ceoAPIKey;
-    echo "<br/>";
-    echo $ceoqty;
-    echo "<br/>";
-    echo $buildURL;
-    echo "<br/>";
-    ?>
-  <div class="slide">
-    <blockquote>
-    <span class="leftq quotes">&ldquo;</span>
-    Comment
-    <span class="rightq quotes">&bdquo;</span>
-    </blockquote>
-    <span>
-      <h2>Name</h2> - <h6>Title</h6> 
-    </span>
-  </div>
+    
 <?php } else {
     //Results are recieved from the CEOJuice API
     //Decode JSON
