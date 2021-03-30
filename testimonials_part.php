@@ -1,8 +1,8 @@
 <?php
 $ceoURL = "https://api.ceojuice.com/api/Processes/SurveyComments?CustomerNumber=";
-$ceoCustNum = "097";
-$ceoAPIKey = "dc5919d9-d0fb-44e0-a6d2-d71e8f38e747";
-$ceoqty = "10";
+$ceoCustNum = ot_get_option('ceojuice_customerid');
+$ceoAPIKey = ot_get_option('ceojuice_apiauth');
+$ceoqty = ot_get_option('ceojuice_commentcount');
 $slideId = 1;
 //$format = new NumberFormatter("en", NumberFormatter::SPELLOUT);
 
@@ -46,7 +46,6 @@ if ($readjson === false) {
         echo "<h6 class='surveydate date'>".date_format($date, "m/d/Y")."</h6>";
         if ($companyName == null) {
             //return nothing if no company name is available
-            echo "<h6 class ='companyname'> - Company Name LLC</h6>"; //for debugging, will comment out after styling is configured.
         } else {
             echo "<h6 class ='companyname'> - ".$companyName."</h6>";
         }
