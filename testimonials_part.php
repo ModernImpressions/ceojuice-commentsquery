@@ -10,6 +10,9 @@ $readjson = @file_get_contents($ceoURL.$ceoCustNum.'&AuthKey='.$ceoAPIKey.'&qty=
 if ($readjson === false) {
     //There is an error opening the file
     echo "failed to poll data";
+    echo $ceoCustNum;
+    echo $ceoAPIKey;
+    echo $ceoqty;
     ?>
   <div class="slide">
     <blockquote>
