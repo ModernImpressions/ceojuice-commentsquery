@@ -5,14 +5,21 @@ $ceoAPIKey = ot_get_option('ceojuice_apiauth');
 $ceoqty = ot_get_option('ceojuice_commentcount');
 $slideId = 1;
 //$format = new NumberFormatter("en", NumberFormatter::SPELLOUT);
+$buildURL = $ceoURL.$ceoCustNum.'&AuthKey='.$ceoAPIKey.'&qty='.$ceoqty;
 
-$readjson = @file_get_contents($ceoURL.$ceoCustNum.'&AuthKey='.$ceoAPIKey.'&qty='.$ceoqty, true);
+$readjson = @file_get_contents($buildURL, true);
 if ($readjson === false) {
     //There is an error opening the file
     echo "failed to poll data";
+    echo "<br/>";
     echo $ceoCustNum;
+    echo "<br/>";
     echo $ceoAPIKey;
+    echo "<br/>";
     echo $ceoqty;
+    echo "<br/>";
+    echo $buildURL;
+    echo "<br/>";
     ?>
   <div class="slide">
     <blockquote>
