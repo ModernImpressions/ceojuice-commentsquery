@@ -3,6 +3,9 @@ $ceoURL = "https://api.ceojuice.com/api/Processes/SurveyComments?CustomerNumber=
 $ceoCustNum = ot_get_option('ceojuice_customerid');
 $ceoAPIKey = ot_get_option('ceojuice_apiauth');
 $ceoqty = ot_get_option('ceojuice_commentcount');
+if ($ceoqty > 0) {
+    $ceoqty = $ceoqty + 3; //add a few extra comments to help counter any that may be removed due to length.
+}
 $slideId = 1;
 //$format = new NumberFormatter("en", NumberFormatter::SPELLOUT);
 $buildURL = $ceoURL . $ceoCustNum . '&AuthKey=' . $ceoAPIKey . '&qty=' . $ceoqty;
@@ -12,10 +15,17 @@ if ($readjson === false) {
     //There is an error opening the file
 ?>
 <?php } else {
-    //Results are recieved from the CEOJuice API
+    //Results are received from the CEOJuice API
     //Decode JSON
     $data = json_decode($readjson, true);
-    //Parse the comment
+    //Remove any comments that are too long
+    foreach ($data as $key => $answerId) {
+        $comment = $answerId['comment'];
+        if (strlen($comment) > 320) {
+            unset($data[$key]);
+        }
+    }
+    //Parse the comments
     foreach ($data as $answerId) {
         $companyId = $answerId["customer"];
         $comment = $answerId['comment'];
